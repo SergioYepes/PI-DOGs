@@ -1,0 +1,25 @@
+.home{
+    display:flex;
+    flex-direction: column;
+    height: inherit;
+    position:absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    margin:0px;
+    background-image: url("https://image.winudf.com/v2/image/Y29tLmJsd3AuZG9nc19zY3JlZW5fMTJfMTUzNzM2NDAyMF8wOTM/screen-12.jpg?fakeurl=1&type=.webp");
+}
+.paginado{
+    align-self: center;
+}
+.filtros{
+    position: flex;
+    top: 100px;
+    align-items: center;
+}
+.welcome{
+    display: flex;
+    color: rgb(243, 243, 150);
+    padding-left: 45%;
+}

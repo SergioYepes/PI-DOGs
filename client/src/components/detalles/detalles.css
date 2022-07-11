@@ -1,0 +1,86 @@
+.divDetails{
+    background-image:url("https://scontent-bog1-1.xx.fbcdn.net/v/t1.6435-9/53300011_2250544685219332_2343933115656830976_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeEbk6tHIUo3hFJf-Vw6F9AQwr-SydZAHgrCv5LJ1kAeCsYk5xQ8AP5AtaDfxcEjuFIDyQRLjWi9qP29s5mt9TgS&_nc_ohc=NPkyAEWG1J0AX-645WU&tn=rbC1WQC4yruGRphF&_nc_ht=scontent-bog1-1.xx&oh=00_AT-424Eh2TZPt0fTW9vK07mbT1KeFPgBucJxM7yRbD_7oQ&oe=62F186BB");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+    margin:0px;
+    width: 100%;
+    position: absolute;
+}
+.ButtonHomeDet{
+        background-color: #b7b7a4;
+        float: left;
+        font-size: medium;
+        margin-left: 0px;
+        margin-top: 36px;
+        height: 43px;
+        border: transparent;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: rgba(125, 9, 9, 0.545) 0px 10px 20px, rgba(172, 8, 8, 0.603) 0px 6px 6px;
+}
+    
+.ButtonHomeDet:hover{
+        background-color: #e8e80e;
+    }
+.ButtonCreateDet{
+    background-color: #f1f110;
+    float: left;
+    font-size: medium;
+    margin-left: 0px;
+    margin-top: 36px;
+    height: 43px;
+    border: transparent;
+    border-radius: 8px;
+    box-shadow: rgba(125, 9, 9, 0.545) 0px 10px 20px, rgba(172, 8, 8, 0.603) 0px 6px 6px;
+    cursor: pointer;
+}
+.ButtonCreateDet:hover{
+    background-color: #a5a58d;
+}
+#home{
+    margin-left: 40px
+}
+.nameD{
+    color: #090106;
+    font-size:50px;
+    padding-left: 500px;
+    text-shadow: 1px 1px 10px rgb(243, 242, 239);
+}
+.list{
+    display: inline-block;
+    padding: 0;
+    margin: 0px;
+    font-size: 25px;
+    color: rgb(242, 210, 210);
+    text-shadow: 1px 1px 10px rgb(43, 26, 1);
+    padding-left: 120px;
+}
+#caja{
+    background-color: #211f1f68;
+    border-radius: 8px;
+}
+.list li{
+    display:inline-block;
+}
+#h2{
+    padding-left: 42px;
+}
+.image{
+    height: 80%;
+    max-height: 500px;
+    width: 95%;
+    max-width: 500px;
+    box-shadow: rgba(125, 9, 9, 0.545) 0px 10px 20px, rgba(172, 8, 8, 0.603) 0px 6px 6px;
+    border-radius: 8px;
+}
+.characters{
+    color: #0d0f03;
+    font-size: 30px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0px;
+    text-shadow: 1px 1px 10px rgb(255, 255, 255);
+}

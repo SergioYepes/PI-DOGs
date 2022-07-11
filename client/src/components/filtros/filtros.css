@@ -1,0 +1,25 @@
+.listado{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(240, 248, 255, 0.271);
+}
+.content-select select{
+    cursor: pointer;
+      padding: 7px 0px;
+      height: 42px;
+    font-size: 1em;
+    color: rgb(94, 94, 94);
+    border:2px solid rgba(0,0,0,0.2);
+      border-radius: 8px;
+      transition: all 0.25s ease;
+  }
+  .content-select select:hover{
+    background: #ffe8d6;
+    color: rgb(71, 71, 71);
+    border-color: rgb(71, 71, 71);
+    transform: translateY(1px);
+  }
+  .content-select select option:hover{
+    background-color: #ffe8d6;
+    transform: translateY(1px);
+  }

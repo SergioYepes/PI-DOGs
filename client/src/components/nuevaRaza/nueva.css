@@ -1,0 +1,118 @@
+.divCreate{
+    background-image: url("https://acegif.com/wp-content/uploads/funny-dog-59.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    margin:0px;
+    width: 100%;
+    height: 700px;
+    position:absolute
+}
+.LinkC{
+    background-color: #5553ed;
+    float: left;
+    font-size: medium;
+    margin-left: 40px;
+    margin-top: 36px;
+    height: 43px;
+    border: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transform:scale(1.1);
+}
+.LinkC:hover{
+    background-color: #24cdd9;
+    cursor: pointer;
+    box-shadow: 0 1px #666;
+    transform: translateY(1px);
+}
+.tittleC{
+    color: #1c2505;
+    justify-content: center;
+    padding-left: 40%;
+    text-shadow: 1px 1px 10px rgb(241, 179, 10);
+}
+label{
+    color: #2b3b03;
+    font-size: medium;
+    margin: 10px;
+    text-shadow: 1px 1px 10px rgb(236, 233, 224);
+    border: 10px ridge rgba(255, 255, 255, 0.646);
+    box-shadow: 0 1px 1rem purple;
+} 
+select{
+    cursor: pointer;
+    padding: 7px 10px;
+    height: 42px;
+    font-size: 1em;
+    color: #0f0601;
+    border:2px solid rgba(0,0,0,0.2);
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    margin: 10px;
+    background-color: rgb(213, 247, 247);
+}
+select:hover{
+    background: #ef7a21;
+    color: rgb(71, 71, 71);
+    border-color: rgb(71, 71, 71);
+}
+input{
+    background-color: #9ca8ef;
+    border-radius: 4px;
+    border-color: steelblue;
+    margin: 10px;
+    text-shadow: 1px 1px 10px rgb(235, 233, 225);
+}
+input:hover{
+    background-color: #ffe8d6;
+}
+ .allTemps{
+    display: inline-block;
+    height:20px;
+}
+.allTemps li{
+    justify-content: center;
+    display: inline-block;
+}
+.temp{
+    font-size: medium;
+    color: #15ae92;
+    margin: 10px;
+}
+.form div{
+    display:flex;
+    height:60px;
+    justify-content: center;
+}
+.x{
+    background-color: #bf0a0a;
+    border:1px gold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.boop{
+    background-color: #c28155;
+    border: transparent;
+    border-radius: 8px;
+    font-size: medium;
+    height: 43px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 10px;
+    color: #4c5042;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.boop:hover{
+    background-color: #15b03c;
+    transform:scale(1.1);
+}
+
+.error{
+    color: red;
+    text-shadow: 1px 1px 10px rgb(235, 233, 225);
+    font-size: large;
+    margin-top: 0;
+}

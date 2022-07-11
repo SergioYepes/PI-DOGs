@@ -1,0 +1,67 @@
+.divLanding{
+    background-image: url("https://w0.peakpx.com/wallpaper/301/995/HD-wallpaper-humor-doge-samurai.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    position:absolute;
+    width: 100%;
+    height: 100vh;
+    margin:0px;
+}
+.h1{
+   margin:0px;
+   color: rgb(1, 49, 16);
+   font-size: 30px;
+   background:seagreen;
+   text-align: center;
+   border: 10px ridge rgba(255, 255, 255, 0.147);
+   box-shadow: 0 2rem 2rem purple;
+   text-shadow: 1px 1px 10px rgb(241, 179, 10);
+}
+.buton{
+    border-radius: 20px;
+    background-color: darkgray;
+    border:none;
+    color:blue;
+    text-align: center;
+    font-size: 28px;
+    padding:20px;
+    width: 350px;
+    transition: all 0.5s;
+    cursor: pointer;
+    top:50%;
+    left: 10%;
+    position: absolute;
+    box-shadow: 0 2rem 2rem purple;
+}
+.buton:hover{
+    transform: scale(1.1);
+    opacity:0.8;
+    box-shadow: 0 2rem 2rem rgb(119, 128, 0);
+}
+.buton span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.buton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .buton:hover span {
+    padding-right: 25px;
+    transform: scale(1.1);
+    opacity:0.8;
+  }
+  
+  .buton:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
