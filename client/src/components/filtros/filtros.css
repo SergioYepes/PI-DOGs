@@ -1,7 +1,7 @@
 .listado{
     display: flex;
     justify-content: space-around;
-    background-color: rgba(240, 248, 255, 0.271);
+    background:linear-gradient(to right,rgba(173, 216, 230, 0.744),rgba(255, 255, 255, 0.784),rgba(173, 216, 230, 0.824))
 }
 .content-select select{
     cursor: pointer;
@@ -22,4 +22,14 @@
   .content-select select option:hover{
     background-color: #ffe8d6;
     transform: translateY(1px);
+  }
+  .nameF{
+    font-style: italic;
+    margin-left: 25px;
+    margin-right: 50px;
+    text-align: left;
+    font-weight:bolder;
+    font-size:30px;
+    border-top: 3px  solid blueviolet;
+    border-bottom: 3px solid blueviolet;
   }

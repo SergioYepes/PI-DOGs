@@ -39,6 +39,17 @@ export function getAllDogs(){
         .catch(e=>"No se conecto bien" + e)
 }
 }
+// export function getAllDogs(){
+//     return async function (dispatch){
+//         try {
+//             let res= await axios.get("/dogs")
+//             const response=res.data
+//             return dispatch({type:GET_ALL_DOGS,payload:response})
+//         } catch (error) {
+            
+//         }
+//     }
+// }
 export const byName = (name) => (dispatch) => {
     return fetch(`http://localhost:3001/dogs?name=${name}`)
       .then((response) => response.json())

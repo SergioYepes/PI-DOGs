@@ -8,6 +8,7 @@
     margin:0px;
     width: 100%;
     position: absolute;
+    overflow: auto;
 }
 .ButtonHomeDet{
         background-color: #b7b7a4;

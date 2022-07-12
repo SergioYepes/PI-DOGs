@@ -87,7 +87,7 @@ function Filtros({setCurrentPage}) {
     <div>
       <ul className="listado">
         <li className='content-select'>
-            <h3 className="name">Temperaments</h3>
+            <h3 className="nameF">Temperaments</h3>
                 <select onChange={e=> handleTemp(e)}>
                   <option key={0} value="All">Select</option>
                     {temps?.sort(function(a,b){
@@ -102,7 +102,7 @@ function Filtros({setCurrentPage}) {
                 </select>
         </li>
         <li className='content-select' >
-        <h3 className="name">Origin</h3>
+        <h3 className="nameF">Origin</h3>
             <select onChange={e => FilterOrigin(e)}  >
               <option value='All'>All breeds</option>
               <option value='api'>Existent breeds</option>
@@ -110,7 +110,7 @@ function Filtros({setCurrentPage}) {
             </select>
        </li>
         <li className='content-select'>
-        <h3 className="name">Name</h3>
+        <h3 className="nameF">Name</h3>
           <select onChange={e=>SortByNameAZ(e)}>
             <option value="selected" hidden>Sort breeds by name</option>
             <option value="asc">A-Z</option>
@@ -118,7 +118,7 @@ function Filtros({setCurrentPage}) {
           </select>
         </li>
         <li className='content-select'>
-        <h3 className="name">Weight</h3>
+        <h3 className="nameF">Weight</h3>
           <select onChange={e=>SortByWeight(e)}>
             <option value="selected" hidden>Sort breeds by Weight</option>
             <option value="asc">Max</option>
@@ -126,7 +126,7 @@ function Filtros({setCurrentPage}) {
           </select>
         </li>
         <li className='content-select'>
-        <h3 className="name">Height</h3>
+        <h3 className="nameF">Height</h3>
           <select className="select" onChange={e=>SortByHeight(e)}>
             <option value="selected" hidden>Sort breeds by Height</option>
             <option value="asc">Max</option>
