@@ -1,4 +1,5 @@
 import axios from "axios";
+import { baseURL } from "./constants";
 
 export const actions={
     GET_TEMPS:"GET_TEMPS",
@@ -33,7 +34,7 @@ const{
 
 export function getAllDogs(){
     return function (dispatch){
-        return fetch("http://localhost:3001/dogs")
+        return fetch(`${baseURL}/dogs`)
         .then(response=> response.json())
         .then(post=> dispatch({type:GET_ALL_DOGS,payload:post}))
         .catch(e=>"No se conecto bien" + e)
@@ -51,7 +52,7 @@ export function getAllDogs(){
 //     }
 // }
 export const byName = (name) => (dispatch) => {
-    return fetch(`http://localhost:3001/dogs?name=${name}`)
+    return fetch(`${baseURL}/dogs?name=${name}`)
       .then((response) => response.json())
       .then((res) => {
         if (res.error) return alert("Ingresar un juego valido.");
@@ -71,7 +72,7 @@ export const byName = (name) => (dispatch) => {
 export function getDetails(id){
     return async function (dispatch){
     try {
-        const res=await fetch(`http://localhost:3001/dogs/${id}`)
+        const res=await fetch(`${baseURL}/dogs/${id}`)
         const response= await res.json()
         return dispatch({type:GET_DETAILS,payload:response})
     } catch (error) {
@@ -82,7 +83,7 @@ export function getDetails(id){
 
 export function getTemps(){
    return function (dispatch){
-    return fetch("http://localhost:3001/temps")
+    return fetch(`${baseURL}/temps`)
                 .then(res=>res.json())
                 .then(res=> dispatch({type:GET_TEMPS,payload:res}))
                 .catch(err=>"en ruta temps f" + err)        
@@ -91,7 +92,7 @@ export function getTemps(){
 export function postTemp(payload){
     return async function (dispatch){
         try {
-             const response = axios.post('http://localhost:3001/dogs', payload);
+             const response = axios.post(`${baseURL}/dogs`, payload);
             
             return response.data
         } catch (error) {
@@ -102,7 +103,7 @@ export function postTemp(payload){
 }
 export function filtradoAS(){
     return function (dispatch){
-        return fetch("http://localhost:3001/filtros/asc")
+        return fetch(`${baseURL}/filtros/asc`)
         .then(response=> response.json())
         .then(post=> dispatch({type:BY_ASC,payload:post}))
         .catch(e=>"No se conecto bien")
@@ -110,7 +111,7 @@ export function filtradoAS(){
 }
 export function filtradoDS(){
     return function (dispatch){
-        return fetch("http://localhost:3001/filtros/desc")
+        return fetch(`${baseURL}/filtros/desc`)
         .then(response=> response.json())
         .then(post=> dispatch({type:BY_DESC,payload:post}))
         .catch(e=>"No se conecto bien")
@@ -118,7 +119,7 @@ export function filtradoDS(){
 }
 export function minWeight(){
     return function (dispatch){
-        return fetch("http://localhost:3001/filtros/Min")
+        return fetch(`${baseURL}/filtros/Min`)
         .then(response=> response.json())
         .then(post=> dispatch({type:BY_MINWEIGHT,payload:post}))
         .catch(e=>"No se conecto bien")
@@ -126,7 +127,7 @@ export function minWeight(){
 }
 export function maxWeight(){
     return function (dispatch){
-        return fetch("http://localhost:3001/filtros/Max")
+        return fetch(`${baseURL}/filtros/Max`)
         .then(response=> response.json())
         .then(post=> dispatch({type:BY_MAXWEIGHT,payload:post}))
         .catch(e=>"No se conecto bien")
@@ -134,7 +135,7 @@ export function maxWeight(){
 }
 export function minHeight(){
     return function (dispatch){
-        return fetch("http://localhost:3001/filtros/MinH")
+        return fetch(`${baseURL}/filtros/MinH`)
         .then(response=> response.json())
         .then(post=> dispatch({type:BY_MINHEIGHT,payload:post}))
         .catch(e=>"No se conecto bien")
@@ -142,7 +143,7 @@ export function minHeight(){
 }
 export function maxHeight(){
     return function (dispatch){
-        return fetch("http://localhost:3001/filtros/MaxH")
+        return fetch(`${baseURL}/filtros/MaxH`)
         .then(response=> response.json())
         .then(post=> dispatch({type:BY_MAXHEIGHT,payload:post}))
         .catch(e=>"No se conecto bien")
