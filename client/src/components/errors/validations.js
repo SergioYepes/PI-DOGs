@@ -3,6 +3,9 @@ const validate = (formulario)=>{
     if(!formulario.name){
         errors.name="Your breed must be a name";
     }
+    else if (!isNaN(parseInt(formulario.name))){
+        errors.name="Your breed must be a name";
+    }
     else if(formulario.name.length>15){
         errors.name="This name is too long, take it easy bro"
     }

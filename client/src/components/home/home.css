@@ -13,6 +13,7 @@
     background-image: url("https://image.winudf.com/v2/image/Y29tLmJsd3AuZG9nc19zY3JlZW5fMTJfMTUzNzM2NDAyMF8wOTM/screen-12.jpg?fakeurl=1&type=.webp");
 }
 .paginado{
+    display: flex;
     align-self: center;
 }
 .filtros{

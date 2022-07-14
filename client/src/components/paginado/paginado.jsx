@@ -22,7 +22,7 @@ function Paginado({dogPerPg,allDogs,paginado,setCurrentPage,currentPage}) {
     <>    
     <nav>
     <ul className='paginado'>
-      <button onClick={e=>prevPg(e)}>prev</button> 
+      <button onClick={e=>prevPg(e)}>👈</button> 
         {pageN.length>1 &&
           pageN.map(n=>(
             <li key={n}>
@@ -30,7 +30,7 @@ function Paginado({dogPerPg,allDogs,paginado,setCurrentPage,currentPage}) {
             </li>
           ))
         }
-      <button onClick={e=>nextPg(e)}>next</button>
+      <button onClick={e=>nextPg(e)}>👉</button>
     </ul>
     </nav> 
     

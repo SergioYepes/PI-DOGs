@@ -32,19 +32,22 @@ function Home() {
     
   return (
     <div className='home'>
-      {loading?<img src={gift} alt="Loading..."/>:
-        <div className='divTotal'>
+      <div className='divTotal'>
         <NavBar setCurrentPage={setCurrentPage}/>
-        <h1 className="welcome">Bienvenido/a</h1>
+        <h1 className="welcome">🤘Bienvenido/a🤘</h1>
         <div className="filtros"><Filtros setCurrentPage={setCurrentPage} /></div>
-        <div className="paginado">
+        </div>
+      {loading?<img src={gift} alt="Loading..."/>:
+        <div>
+          <div className="paginado">
           <Paginado dogPerPg={dogPerPg} allDogs={allDogs.length} paginado={paginado} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
         </div>
         <div><Cards allDogs={currentDog}/></div>
         <div className="paginado">
           <Paginado dogPerPg={dogPerPg} allDogs={allDogs.length} paginado={paginado} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
         </div>
-          </div>}
+        </div>
+          }
     </div>
   )
 }

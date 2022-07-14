@@ -23,7 +23,7 @@ function Nueva() {
     weightMax: '',
     lifeSpan: '',
     image: '',
-    temperaments: [],
+    temperamentos: [],
   })
 
   useEffect(()=>{
@@ -44,7 +44,7 @@ function Nueva() {
   function handleSubmit(e){
     e.preventDefault()
     console.log(error)
-    if(!Object.getOwnPropertyNames(error).length && Formulario.name && Formulario.heightMax && Formulario.heightMin && Formulario.weightMax && Formulario.weightMin && Formulario.lifeSpan &&Formulario.image &&Formulario.temperaments.length)
+    if(!Object.getOwnPropertyNames(error).length && Formulario.name && Formulario.heightMax && Formulario.heightMin && Formulario.weightMax && Formulario.weightMin && Formulario.lifeSpan &&Formulario.image &&Formulario.temperamentos.length)
     {dis(postTemp(Formulario))
     alert("Se ha creado la raza")
     setFormulario({
@@ -55,7 +55,7 @@ function Nueva() {
       weightMax: '',
       lifeSpan: '',
       image: '',
-      temperaments:[],
+      temperamentos:[],
     })
     his.push("/home")
   }
@@ -65,10 +65,10 @@ function Nueva() {
 
   }
   function handleSelect(e){
-    if(!Formulario.temperaments.includes(e.target.value)){
+    if(!Formulario.temperamentos.includes(e.target.value)){
       setFormulario({
         ...Formulario,
-        temperaments:[...Formulario.temperaments, e.target.value]
+        temperamentos:[...Formulario.temperamentos, e.target.value]
       })
       console.log(Formulario)
     }
@@ -76,7 +76,7 @@ function Nueva() {
   function handleDelete(e){
     setFormulario({
       ...Formulario,
-      temperaments:Formulario.temperaments.filter(temperament=>temperament !== e)
+      temperamentos:Formulario.temperamentos.filter(temperament=>temperament !== e)
     })
   }
   
@@ -198,7 +198,7 @@ function Nueva() {
                 })
               }
             </select>
-            {Formulario.temperaments.map(e=>{
+            {Formulario.temperamentos.map(e=>{
                 return (
                   <ul key={e} className='allTemps'>
                     <li>
