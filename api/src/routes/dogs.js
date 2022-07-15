@@ -35,6 +35,33 @@ router.post("/",async(req,res)=>{
     canchaCreada.addTemperamento(temperamentusDB)
     res.status(200).send("Created 🦮")
 })
-
+router.put("/:id",async (req,res)=>{
+    try {
+        const {id}=req.params
+    const{name,heightMin,heightMax,weightMin,weightMax,lifeSpan,image}=req.body
+    let cambios=await Breed.update(
+        {name,heightMin,heightMax,weightMin,weightMax,lifeSpan,image},
+        {where:{
+            id
+        }}
+        )
+    res.status(200).send("cambios realizados")
+    } catch (error) {
+        res.status(400).send("No se pudo actualizar el user")
+    }
+})
+router.delete('/:id',async(req,res)=>{
+    try {
+        let{id}=req.params
+        res.json(await Breed.destroy({
+            where:{
+                id 
+            }
+        }))   
+    } 
+    catch (error) {
+        res.status(400).send("No se pudo borrar el user")
+    }
+})
 
 module.exports=router;

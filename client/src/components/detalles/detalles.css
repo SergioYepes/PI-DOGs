@@ -30,7 +30,7 @@
     background-color: #f1f110;
     float: left;
     font-size: medium;
-    margin-left: 0px;
+    margin-left: 10px;
     margin-top: 36px;
     height: 43px;
     border: transparent;
@@ -84,4 +84,17 @@
     margin-bottom: 0;
     margin-top: 0px;
     text-shadow: 1px 1px 10px rgb(255, 255, 255);
+}
+.favButton{
+    display:absolute;
+    justify-content:center;
+    margin-top:30px;
+    padding-left:10px;
+    height:20px;
+    background-color:transparent;
+    border:transparent;
+    cursor: pointer;
+}
+.favButton:hover{
+    transform: scale(2.2, 2.2);
 }

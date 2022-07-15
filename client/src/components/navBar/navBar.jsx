@@ -11,6 +11,7 @@ function NavBar({setCurrentPage}) {
     function handleClick(e){
         e.preventDefault()
         dis(getAllDogs())
+        setCurrentPage(1)
     }
   return (
     <div className="navbar">
@@ -21,6 +22,9 @@ function NavBar({setCurrentPage}) {
                 </div>
             
                 <div className="links">
+                    <div>
+                        <button className="favButton">❤️</button>
+                    </div>
                     <div>
                         <Link className="Link" to='/home'>
                             <button className="linkToHome" onClick={e=>handleClick(e)}>Home </button>

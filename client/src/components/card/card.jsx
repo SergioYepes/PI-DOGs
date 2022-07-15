@@ -1,7 +1,11 @@
 import React from 'react'
 import "./card.css"
 
+
+
+
 function Card({image,name,temperamentos,weightMin,weightMax}) {
+  
   return (
     <div className='divCard'>
       <img src={image} alt="not found"  className='imageDog' />
@@ -22,6 +26,7 @@ function Card({image,name,temperamentos,weightMin,weightMax}) {
         <h3 className="name">weight: {weightMax} - {weightMin}</h3>:
         <></>
       }
+
       </div>
     </div>
   )
