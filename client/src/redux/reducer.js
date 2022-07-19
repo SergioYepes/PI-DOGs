@@ -10,13 +10,16 @@ const {GET_ALL_DOGS,
     BY_MAXHEIGHT,
     BY_MAXWEIGHT,
     FILTER_TEMP,
-    FILTER_BY_ORIGIN}=actions
+    FILTER_BY_ORIGIN,
+    ADD_FAV,
+    REMOVE_FAV}=actions
 const initialState={
     allDogs:[],
     detail:[],
     temps:[],
     sortDogs:[],
     byName:[],
+    FavoDogs:[],
 }
 
 function rootReducer(state=initialState, {type,payload}){
@@ -93,6 +96,20 @@ function rootReducer(state=initialState, {type,payload}){
             return{
                 ...state,
                 allDogs:origin
+            }
+        }
+        case ADD_FAV:{
+            return {
+                ...state,
+                FavoDogs: state.FavoDogs.concat(payload)
+            }
+        }
+        case REMOVE_FAV:{
+            let id=payload.map(e=>e.id)
+            console.log(id)
+            return{
+                ...state,
+                FavoDogs: state.FavoDogs.filter(t=>t.id !== id[0])
             }
         }
         default:

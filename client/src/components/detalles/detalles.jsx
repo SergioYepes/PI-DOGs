@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect} from 'react'
 import {Link, useParams} from "react-router-dom"
 import {useDispatch,useSelector} from "react-redux"
 import { getDetails } from '../../redux/actions'
@@ -12,19 +12,14 @@ function Detalles() {
   useEffect(()=>{
     dis(getDetails(id))
   },[dis,id])
-  
-  const red="❤️"
-  const black= "🖤"
   return (
     <div className='divDetails'>
       <Link to="/home"><button className="ButtonHomeDet" id="home">Home</button></Link>
       <Link to="/create"><button className="ButtonCreateDet">Create</button></Link>
-      <button className="favButton">{red}</button>
       {
         allDogis.length > 0 ?
           <div>
             <h1 className="nameD">{allDogis[0].name}</h1>
-            
             <ul className="list">
               <li>
                 <img src={allDogis[0].image} alt={allDogis[0].image} className="image"/>

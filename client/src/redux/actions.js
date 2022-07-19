@@ -15,6 +15,8 @@ export const actions={
     BY_MAXHEIGHT:"BY_MAXHEIGHT",
     FILTER_TEMP:"FILTER_TEMP",
     FILTER_BY_ORIGIN:"FILTER_BY_ORIGIN",
+    ADD_FAV:"ADD_FAV",
+    REMOVE_FAV:"REMOVE_FAV",
 }
 const{
     GET_ALL_DOGS,
@@ -28,7 +30,9 @@ const{
     BY_MINHEIGHT,
     BY_MAXHEIGHT,
     FILTER_TEMP,
-    FILTER_BY_ORIGIN
+    FILTER_BY_ORIGIN,
+    ADD_FAV,
+    REMOVE_FAV
 
 }=actions
 
@@ -158,6 +162,18 @@ export function filtradoByTemp(payload){
 export function filtradoByOrigin(payload){
     return{
         type:FILTER_BY_ORIGIN,
+        payload
+    }
+}
+export function addFavDog(payload){
+    return {
+        type:ADD_FAV,
+        payload
+    }
+}
+export function removeFav(payload){
+    return {
+        type:REMOVE_FAV,
         payload
     }
 }
