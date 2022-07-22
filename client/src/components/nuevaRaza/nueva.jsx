@@ -2,8 +2,8 @@ import React from 'react'
 import {Link} from "react-router-dom"
 import { useEffect,useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
-import { getTemps , postTemp } from '../../redux/actions'
+import { useHistory,useParams } from 'react-router-dom'
+import { getTemps , postTemp ,getDetails} from '../../redux/actions'
 import validate from '../errors/validations'
 import "./nueva.css"
 
@@ -11,10 +11,12 @@ import "./nueva.css"
 function Nueva() {
   const dis=useDispatch()
   const his=useHistory()
+  // const {id}=useParams()
 
   const [error, setError] = useState({})
   // const [select, setSelect] = useState("")
   const temps=useSelector((state)=>state.temps)
+  // const det=useSelector((state)=>state.detail)
   const [Formulario, setFormulario] = useState({
     name: '',
     heightMin: '',
@@ -25,10 +27,27 @@ function Nueva() {
     image: '',
     temperamentos: [],
   })
-
   useEffect(()=>{
     dis(getTemps())
   },[dis])
+  // useEffect(()=>{
+  //   if(id){
+  //     load(id)
+  //   }
+  // },[id])
+  // const load= async()=>{
+  //   const res=await fetch(`http://localhost:3001/dogs/${id}`)
+  //   const data= await res.json()
+  //   console.log(data.temperamentos[0])
+  //   setFormulario({heightMax:data.heightMax,
+  //                  heightMin:data.heightMin,
+  //                  weightMax:data.weightMax,
+  //                  weightMin:data.weightMin,
+  //                  image:data.image,
+  //                  temperamentos:data.temperamentos[0],
+  //                  name:data.name,
+  //                  lifeSpan:data.lifeSpan})
+  // }
 
   function handleChange(e){
       setFormulario({
@@ -140,9 +159,7 @@ function Nueva() {
               onChange={e=>handleChange(e)}
               />
               <label><strong> kg</strong></label>
-              {error.weightMax && (
-                        <p className='error'><strong>{error.weightMax}</strong></p>
-                    )}
+              {error.weightMax && (<p className='error'><strong>{error.weightMax}</strong></p>)}
               
           </div>
           <div>
@@ -155,9 +172,7 @@ function Nueva() {
               onChange={e=>handleChange(e)}
               />
               <label><strong> kg</strong></label>
-              {error.weightMin && (
-                        <p className='error'><strong>{error.weightMin}</strong></p>
-                    )}
+              {error.weightMin && (<p className='error'><strong>{error.weightMin}</strong></p>)}
           </div>
           <div>
             <h4><label>Life Span: </label></h4>
@@ -169,9 +184,7 @@ function Nueva() {
               onChange={e=>handleChange(e)}
               />
               <label><strong> years</strong></label>
-              {error.lifeSpan && (
-                        <p className='error'><strong>{error.lifeSpan}</strong></p>
-                    )}
+              {error.lifeSpan && (<p className='error'><strong>{error.lifeSpan}</strong></p>)}
           </div>
           <div>
             <h4><label>Image: </label></h4>

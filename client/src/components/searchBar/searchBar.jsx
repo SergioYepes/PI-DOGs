@@ -12,9 +12,15 @@ function SearchBar({setCurrentPage}) {
   }
   function handleClick(e){
     e.preventDefault()
-    dis(byName(Nombre))
+    if(Nombre===""){
+      alert("set one breed")
+    }
+    else{
+      dis(byName(Nombre))
     setCurrentPage(1)
     setNombre("")
+    }
+    
   }
   
   return (

@@ -10,46 +10,46 @@ const validate = (formulario)=>{
         errors.name="This name is too long, take it easy bro"
     }
     else if(!formulario.heightMin){
-        errors.heightMin="Min required"
+        errors.heightMin="Min height required"
     }
     else if(isNaN(parseInt(formulario.heightMin))){
-        errors.heightMin="Must be a number"
+        errors.heightMin="Min height must be a number"
     }
     else if(formulario.heightMin<=0){
-        errors.heightMin="Must be higher than zero"
+        errors.heightMin="Min height Must be higher than zero"
     }
     else if(parseInt(formulario.heightMin)>=parseInt(formulario.heightMax)){
         errors.heightMin="Min height must be lower than Max height"
     }
     else if(!formulario.heightMax){
-        errors.heightMin="Min required"
+        errors.heightMin="Max height required"
     }
     else if(isNaN(parseInt(formulario.heightMax))){
-        errors.heightMin="Must be a number"
+        errors.heightMin="Max height Must be a number"
     }
     else if(formulario.heightMin>150){
-        errors.heightMin="Must be higher than zero"
+        errors.heightMin="min height Must be higher than zero and less than 150 cm"
     }
     else if(!formulario.weightMin){
-        errors.weightMin="Min required"
+        errors.weightMin="Min weight required"
     }
     else if(isNaN(parseInt(formulario.weightMin))){
-        errors.weightMin="Must be a number"
+        errors.weightMin="Min weight Must be a number"
     }
     else if(formulario.weightMin<=0){
-        errors.weightMin="Must be higher than zero"
+        errors.weightMin="Max height Must be higher than zero"
     }
     else if(parseInt(formulario.weightMin)>=parseInt(formulario.weightMax)){
         errors.weightMin="Min weight Must be lower than Max weight"
     }
     else if(!formulario.weightMax){
-        errors.weightMin="Min required"
+        errors.weightMin="Min weight required"
     }
     else if(isNaN(parseInt(formulario.weightMax))){
-        errors.weightMin="Must be a number"
+        errors.weightMin="Max weight Must be a number"
     }
     else if(formulario.weightMin>250){
-        errors.weightMin="Must be higher than zero"
+        errors.weightMin="Min weight Must be higher than zero and less than 250 kg"
     }
     else if (!formulario.lifeSpan) {
         errors.lifeSpan = 'Life span is required!!';

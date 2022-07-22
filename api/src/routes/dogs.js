@@ -38,8 +38,8 @@ router.post("/",async(req,res)=>{
 router.put("/:id",async (req,res)=>{
     try {
         const {id}=req.params
-    const{name,heightMin,heightMax,weightMin,weightMax,lifeSpan,image}=req.body
-    let cambios=await Breed.update(
+        const{name,heightMin,heightMax,weightMin,weightMax,lifeSpan,image}=req.body
+        await Breed.update(
         {name,heightMin,heightMax,weightMin,weightMax,lifeSpan,image},
         {where:{
             id
@@ -62,6 +62,7 @@ router.delete('/:id',async(req,res)=>{
     catch (error) {
         res.status(400).send("No se pudo borrar el user")
     }
+    console.log("esto sirve")
 })
 
 module.exports=router;

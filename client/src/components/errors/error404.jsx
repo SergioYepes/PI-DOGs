@@ -1,10 +1,16 @@
 import React from 'react'
 import "./error.css"
+import {useHistory} from "react-router-dom"
 
-function error404() {
+function Error404() {
+  const his=useHistory()
   return (
+    <>
+    <button className="favButton" onClick={()=>his.push("/home")}>home</button>
     <div className='error2'>error404</div>
+    
+    </>
   )
 }
 
-export default error404
+export default Error404

@@ -12,6 +12,9 @@ const {GET_ALL_DOGS,
     FILTER_TEMP,
     FILTER_BY_ORIGIN,
     ADD_FAV,
+    UPDATE,
+    DELETE,
+    VACIAR,
     REMOVE_FAV}=actions
 const initialState={
     allDogs:[],
@@ -22,7 +25,7 @@ const initialState={
     FavoDogs:[],
 }
 
-function rootReducer(state=initialState, {type,payload}){
+function rootReducer(state=initialState,{type,payload}){
     switch(type){
         case GET_ALL_DOGS:
             return {
@@ -38,8 +41,14 @@ function rootReducer(state=initialState, {type,payload}){
         case GET_DETAILS:
             return {
                 ...state,
-                detail:payload
+               detail:payload
             }
+        case VACIAR:
+            return{
+                ...state,
+                detail:[]
+            }
+        
         case GET_TEMPS:
            return  {
                 ...state,
@@ -106,11 +115,16 @@ function rootReducer(state=initialState, {type,payload}){
         }
         case REMOVE_FAV:{
             let id=payload.map(e=>e.id)
-            console.log(id)
             return{
                 ...state,
                 FavoDogs: state.FavoDogs.filter(t=>t.id !== id[0])
             }
+        }
+        case UPDATE:{
+            return state
+        }
+        case DELETE:{  
+            return state
         }
         default:
         return state

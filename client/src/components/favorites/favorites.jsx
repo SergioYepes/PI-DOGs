@@ -20,11 +20,19 @@ function Favorites({setCurrentPage}) {
             {fav?.map(m=>
             <div key={m.id} className='divFav'>
                 <Link to ={"/home/" + m.id} style={{textDecoration:'none'}}>
-                    
+                    {console.log(m)}
                         <div className="nameCard">
                         <img src={m.image} alt="not found" className='imageDog'></img>
                         <h1 className="name">{m.name}</h1>
-                        <h2 className="name">{m.temperamentos}</h2>
+                        <h3 className="name">{function(temperamentos){
+                            if(typeof(temperamentos)==="string"){
+                                 return temperamentos
+                                    }
+                            if(Array.isArray(temperamentos)){
+                            let tempus=temperamentos.map(e=>e.name)
+                                 return tempus.join(", ")
+                                }
+                                }(m.temperamentos)}</h3>
                         </div>
                    
                 </Link>

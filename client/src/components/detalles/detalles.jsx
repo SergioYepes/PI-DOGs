@@ -1,21 +1,25 @@
 import React, { useEffect} from 'react'
-import {Link, useParams} from "react-router-dom"
+import {Link, useParams, useHistory} from "react-router-dom"
 import {useDispatch,useSelector} from "react-redux"
-import { getDetails } from '../../redux/actions'
+import { getDetails,vaciar } from '../../redux/actions'
 import "./detalles.css"
 
 
 function Detalles() {
   const dis=useDispatch()
-  const allDogis=useSelector((state=>state.detail))
+  // const his=useHistory()
+  let allDogis=useSelector((state=>state.detail))
   const {id}=useParams()
   useEffect(()=>{
     dis(getDetails(id))
+    return ()=>dis(vaciar())
   },[dis,id])
+  console.log(allDogis)
   return (
     <div className='divDetails'>
       <Link to="/home"><button className="ButtonHomeDet" id="home">Home</button></Link>
       <Link to="/create"><button className="ButtonCreateDet">Create</button></Link>
+      {/* <button className="ButtonHomeDet" onClick={()=>his.push(`/create/${id}`)}>Update</button> */}
       {
         allDogis.length > 0 ?
           <div>
