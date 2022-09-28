@@ -1,5 +1,5 @@
 import axios from "axios";
-import { baseURL ,local } from "./constants";
+import { baseURL ,local} from "./constants";
 
 export const actions={
     GET_TEMPS:"GET_TEMPS",
@@ -53,7 +53,7 @@ const{
 export function getAllDogs(){
     return async function (dispatch){
         try {
-            let res= await axios.get(`${local}/dogs`)
+            let res= await axios.get(`${baseURL}/dogs`)
             const response=res.data
             return dispatch({type:GET_ALL_DOGS,payload:response})
         } catch (error) {
@@ -67,7 +67,7 @@ export function vaciar(){
     }
 }
 export const byName = (name) => (dispatch) => {
-    return fetch(`${local}/dogs?name=${name}`)
+    return fetch(`${baseURL}/dogs?name=${name}`)
       .then((response) => response.json())
       .then((res) => {
         // console.log(res)
@@ -88,7 +88,7 @@ export const byName = (name) => (dispatch) => {
 export function getDetails(id){
     return async function (dispatch){
     try {
-        const res=await fetch(`${local}/dogs/${id}`)
+        const res=await fetch(`${baseURL}/dogs/${id}`)
         const response= await res.json()
         return dispatch({type:GET_DETAILS,payload:response})
     } catch (error) {
@@ -99,7 +99,7 @@ export function getDetails(id){
 
 export function getTemps(){
    return function (dispatch){
-    return fetch(`${local}/temps`)
+    return fetch(`${baseURL}/temps`)
                 .then(res=>res.json())
                 .then(res=> dispatch({type:GET_TEMPS,payload:res}))
                 .catch(err=>"en ruta temps f" + err)        
@@ -108,7 +108,7 @@ export function getTemps(){
 export function postTemp(payload){
     return async function (dispatch){
         try {
-             const response = axios.post(`${local}/dogs`, payload);
+             const response = axios.post(`${baseURL}/dogs`, payload);
             
             return response.data
         } catch (error) {
@@ -119,7 +119,7 @@ export function postTemp(payload){
 }
 export function filtradoAS(){
     return function (dispatch){
-        return fetch(`${local}/filtros/asc`)
+        return fetch(`${baseURL}/filtros/asc`)
         .then(response=> response.json())
         .then(post=> dispatch({type:BY_ASC,payload:post}))
         .catch(e=>"No se conecto bien")
@@ -127,7 +127,7 @@ export function filtradoAS(){
 }
 export function filtradoDS(){
     return function (dispatch){
-        return fetch(`${local}/filtros/desc`)
+        return fetch(`${baseURL}/filtros/desc`)
         .then(response=> response.json())
         .then(post=> dispatch({type:BY_DESC,payload:post}))
         .catch(e=>"No se conecto bien")
@@ -135,7 +135,7 @@ export function filtradoDS(){
 }
 export function minWeight(){
     return function (dispatch){
-        return fetch(`${local}/filtros/Min`)
+        return fetch(`${baseURL}/filtros/Min`)
         .then(response=> response.json())
         .then(post=> dispatch({type:BY_MINWEIGHT,payload:post}))
         .catch(e=>"No se conecto bien")
@@ -143,7 +143,7 @@ export function minWeight(){
 }
 export function maxWeight(){
     return function (dispatch){
-        return fetch(`${local}/filtros/Max`)
+        return fetch(`${baseURL}/filtros/Max`)
         .then(response=> response.json())
         .then(post=> dispatch({type:BY_MAXWEIGHT,payload:post}))
         .catch(e=>"No se conecto bien")
@@ -151,7 +151,7 @@ export function maxWeight(){
 }
 export function minHeight(){
     return function (dispatch){
-        return fetch(`${local}/filtros/MinH`)
+        return fetch(`${baseURL}/filtros/MinH`)
         .then(response=> response.json())
         .then(post=> dispatch({type:BY_MINHEIGHT,payload:post}))
         .catch(e=>"No se conecto bien")
@@ -159,7 +159,7 @@ export function minHeight(){
 }
 export function maxHeight(){
     return function (dispatch){
-        return fetch(`${local}/filtros/MaxH`)
+        return fetch(`${baseURL}/filtros/MaxH`)
         .then(response=> response.json())
         .then(post=> dispatch({type:BY_MAXHEIGHT,payload:post}))
         .catch(e=>"No se conecto bien")
@@ -193,7 +193,7 @@ export function update(id){
     return async function (dispatch){
         try {
             console.log(id)
-            await axios.put(`${local}/dogs/${id}` )
+            await axios.put(`${baseURL}/dogs/${id}` )
             return dispatch({type:UPDATE,id})
         } catch (error) {
             alert(error)
@@ -203,7 +203,7 @@ export function update(id){
 export function deleteDB(id){
     return async function (dispatch){
         try {
-            await axios.delete(`${local}/dogs/${id}`)
+            await axios.delete(`${baseURL}/dogs/${id}`)
             return dispatch({type:DELETE, id})
         } catch (error) {
             alert("can´t delete this dog due to is in api or does not exist")

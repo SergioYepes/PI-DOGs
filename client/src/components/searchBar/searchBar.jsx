@@ -17,8 +17,8 @@ function SearchBar({setCurrentPage}) {
     }
     else{
       dis(byName(Nombre))
-    setCurrentPage(1)
-    setNombre("")
+      setCurrentPage(1)
+      setNombre("")
     }
     
   }
